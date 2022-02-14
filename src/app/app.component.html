@@ -1,0 +1,49 @@
+
+<div class="container">
+  <h5>Personas</h5>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+   
+      <th scope="col">Apellido</th>
+      <th scope="col">Correo</th>
+       <th scope="col">Documento</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let persona of personas">
+      <th scope="row">{{persona.first}}</th>
+ 
+      <td>{{persona.last}}</td>
+      <td>{{persona.email}}</td>
+      <td></td>
+      
+    </tr>
+   
+  </tbody>
+</table>
+  <h5>Agregar</h5>
+  <div class="card">
+  <div class="card-header">
+    Agregar
+  </div>
+  <div class="card-body">
+       <form [formGroup]="formularioAgregar" (ngSubmit)="enviarDatos()">
+      <div class="mb-3">
+        <label class="form-label">Nombre</label>
+        <input type="text" formControlName="name" class="form-control" id="exampleInputEmail1" >
+        
+      </div>
+      <div class="mb-3">
+         <label for="formFile" class="form-label">Documento</label>
+      <input class="form-control" formControlName="file" type="file" id="formFile">
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+  </div>
+</div>
+
+</div>
